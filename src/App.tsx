@@ -4,7 +4,7 @@ import { useMultistepForm } from "./useMultistepForm"
 
 function App() {
 
-  const { steps, currentStepIndex, step } = useMultistepForm([
+  const { steps, currentStepIndex, step, isFirstStep } = useMultistepForm([
     <div>One</div>,
     <div>Two</div>,
   ])
@@ -39,7 +39,7 @@ function App() {
             justifyContent: 'flex-end',
           }}>
           
-          <button>Back</button>
+          {!isFirstStep && <button>Back</button>}
           <button>Next</button>
 
         </div>
